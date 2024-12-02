@@ -1,0 +1,14 @@
+.social-banner {
+  background-color: none;
+  border: none;
+}
+
+.social-icon {
+  border: inherit;
+  background-color: transparent;
+  color: var(--mj-gray);
+}
+
+.social-icon:hover {
+  color: var(--mj-dark-teal);
+}

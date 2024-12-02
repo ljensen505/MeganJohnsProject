@@ -1,0 +1,13 @@
+[Unit]
+Description=uvicorn service for api.meganjohns.com
+After=network.target
+
+[Service]
+User=lucas
+Group=www-data
+WorkingDirectory=/home/lucas/MeganJohns/server
+ExecStart=/home/lucas/MeganJohns/server/.venv/bin/uvicorn app:app --host 0.0.0.0 --port 8080 --workers 2
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

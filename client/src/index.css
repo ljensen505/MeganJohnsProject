@@ -1,0 +1,25 @@
+:root {
+  --mj-white: #effffd;
+  --mj-gray: #a9a9a9;
+  --mj-dark-gray: #545454;
+  --mj-gold: #a46609;
+  --mj-teal: #72c6e5;
+  --mj-dark-teal: #006990;
+  --mj-light-blue: #a1dcf2;
+  --mj-light-blue-alt: #0088cb;
+  --mj-green: #79af13;
+}
+
+body {
+  font-family: nunito, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: var(--mj-white);
+}
+
+a {
+  font-weight: 500;
+  color: var(--mj-gold);
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--mj-dark-teal);
+}
