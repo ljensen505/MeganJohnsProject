@@ -1,8 +1,8 @@
-import { Album } from "./Album";
-import { Artwork } from "./Artwork";
-import { Bio, ProfessionalService } from "./Bio";
-import { Quote } from "./Quote";
-import { Video } from "./Video";
+import type { Album } from "./Album";
+import type { Artwork } from "./Artwork";
+import type { Bio, ProfessionalService } from "./Bio";
+import type { Quote } from "./Quote";
+import type { Video } from "./Video";
 
 export interface MeganJohns {
   artwork: Artwork[];
@@ -11,5 +11,4 @@ export interface MeganJohns {
   quotes: Quote[];
   bio: Bio;
   professional_services: ProfessionalService[];
-  version: string;
 }

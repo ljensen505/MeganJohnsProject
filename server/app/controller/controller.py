@@ -12,12 +12,6 @@ class Controller:
     def __init__(self) -> None:
         pass
 
-    async def get_version(self) -> str:
-        repo = Repo(Path.cwd().parent.joinpath(".git"))
-        tags = [tag.tag for tag in repo.tags if tag.tag is not None]
-        tags.sort(key=lambda t: t.tagged_date)
-        return tags[-1].tag
-
     async def get_all_videos(self) -> list[Video]:
         return Video.select_all()
 

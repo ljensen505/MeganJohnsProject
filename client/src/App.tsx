@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { getMeganJohns } from "./Api";
-import { MeganJohns } from "./types/MeganJohns";
-import { Album } from "./types/Album";
-import { Artwork } from "./types/Artwork";
-import { Quote } from "./types/Quote";
-import { Video } from "./types/Video";
-import { Bio, ProfessionalService } from "./types/Bio";
+import type { MeganJohns } from "./types/MeganJohns";
+import type { Album } from "./types/Album";
+import type { Artwork } from "./types/Artwork";
+import type { Quote } from "./types/Quote";
+import type { Video } from "./types/Video";
+import type { Bio, ProfessionalService } from "./types/Bio";
 import MjSection from "./MjSection";
 import Header from "./Header/Header";
 import About from "./About/Homepage";
@@ -29,7 +29,7 @@ function App() {
       },
       (error) => {
         console.error(error);
-      },
+      }
     );
   }, []);
 
@@ -56,7 +56,6 @@ function App() {
         <MjSection sectionTitle="artwork" works={artwork} />
         <Videos videos={videos} />
         <About bio={bio} quotes={quotes} services={services} />
-        <p>{mj.version}</p>
       </Container>
     </Container>
   );

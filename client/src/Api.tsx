@@ -1,10 +1,10 @@
 import axios from "axios";
-import { MeganJohns } from "./types/MeganJohns";
-import { Artwork } from "./types/Artwork";
-import { Quote } from "./types/Quote";
-import { Video } from "./types/Video";
-import { Album } from "./types/Album";
-import { Bio, ProfessionalService } from "./types/Bio";
+import type { MeganJohns } from "./types/MeganJohns";
+import type { Artwork } from "./types/Artwork";
+import type { Quote } from "./types/Quote";
+import type { Video } from "./types/Video";
+import type { Album } from "./types/Album";
+import type { Bio, ProfessionalService } from "./types/Bio";
 
 const baseURL = import.meta.env.VITE_API_URL as string;
 
@@ -19,7 +19,6 @@ export const getMeganJohns = async (): Promise<MeganJohns> => {
   const bio = response.data.bio as Bio;
   const professional_services = response.data
     .professional_services as ProfessionalService[];
-  const version = response.data.version as string;
   return {
     artwork,
     videos,
@@ -27,6 +26,5 @@ export const getMeganJohns = async (): Promise<MeganJohns> => {
     quotes,
     bio,
     professional_services,
-    version,
   } as MeganJohns;
 };

@@ -43,7 +43,6 @@ class MeganJohns(BaseModel):
     videos: list[Video]
     bio: Bio
     professional_services: list[ProfessionalService]
-    version: str
 
 
 @app.get("/")
@@ -63,10 +62,4 @@ async def root() -> MeganJohns:
         videos=videos,
         bio=bio,
         professional_services=services,
-        version=await controller.get_version(),
     )
-
-
-@app.get("/version")
-async def version() -> str:
-    return await controller.get_version()
