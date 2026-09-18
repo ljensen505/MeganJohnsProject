@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
+import { Container } from "react-bootstrap";
+import About from "./About/Homepage";
 import { getMeganJohns } from "./Api";
-import type { MeganJohns } from "./types/MeganJohns";
+import "./App.css";
+import Header from "./Header/Header";
+import MjSection from "./MjSection";
+import Reel from "./Reel/Reel";
 import type { Album } from "./types/Album";
 import type { Artwork } from "./types/Artwork";
+import type { Bio, ProfessionalService } from "./types/Bio";
+import type { MeganJohns } from "./types/MeganJohns";
 import type { Quote } from "./types/Quote";
 import type { Video } from "./types/Video";
-import type { Bio, ProfessionalService } from "./types/Bio";
-import MjSection from "./MjSection";
-import Header from "./Header/Header";
-import About from "./About/Homepage";
-import { Container } from "react-bootstrap";
 import Videos from "./Videos/Videos";
-import "./App.css";
 
 function App() {
   const [mj, setMj] = useState<MeganJohns | undefined>(undefined);
@@ -29,7 +30,7 @@ function App() {
       },
       (error) => {
         console.error(error);
-      }
+      },
     );
   }, []);
 
@@ -52,6 +53,7 @@ function App() {
     <Container className="">
       <Container id="main-content">
         <Header mj={mj} />
+        <Reel />
         <MjSection sectionTitle="discography" works={albums} />
         <MjSection sectionTitle="artwork" works={artwork} />
         <Videos videos={videos} />
