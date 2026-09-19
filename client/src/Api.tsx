@@ -11,6 +11,9 @@ const baseURL = import.meta.env.VITE_API_URL as string;
 const api = axios.create({ baseURL: baseURL });
 
 export const getMeganJohns = async (): Promise<MeganJohns> => {
+  if (!baseURL) {
+    throw new Error(`Expected a string for baseURL but got ${baseURL}`);
+  }
   const response = await api.get<MeganJohns>("/");
   const albums = response.data.albums as Album[];
   const artwork = response.data.artwork as Artwork[];
